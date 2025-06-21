@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 
 
-class Myfirstproj
+class class1
 {
      public static void main(String[] rk)
      {
@@ -44,7 +44,7 @@ class Myfirstproj
 
 
 
-	jf.setTitle("Ravi Kant Sahu");
+	jf.setTitle("Ankan Basu");
 	
 	ImageIcon ig = new ImageIcon("DeWatermark.ai_1744543533742.png");
 
