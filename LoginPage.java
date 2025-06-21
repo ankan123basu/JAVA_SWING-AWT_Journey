@@ -1,43 +1,61 @@
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import javax.swing.*;
 
-public class LoginPage {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Login Page");
-        frame.setSize(700, 800);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.getContentPane().setBackground(Color.MAGENTA);
-        frame.setLayout(null); 
+public class LoginPage
+{
+    static public void main(String[] arg)
+    {
+	JFrame f = new JFrame("LogIn");
+	f.setSize(700, 800);
+	f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+	f.setLocationRelativeTo(null);
+	f.getContentPane().setBackground(Color.MAGENTA);
+	f.setLayout(null);		//Setting the Layout to null	
 
-        Font font1 = new Font(Font.SERIF, Font.BOLD, 24);
+	Font font1 = new Font(Font.SERIF, 1, 24);
 
-        // Username Field
-        JTextField tf = new JTextField("Username");
-        tf.setFont(font1);
-        tf.setBounds(200, 250, 300, 50);
-        frame.add(tf);
+	JTextField tf = new JTextField("User Name");
+	f.add(tf);		
+	tf.setFont(font1);		//Changing the Font of TextField
+	tf.setBounds(200, 200, 300, 50);
 
-        // Password Field
-        JPasswordField pf = new JPasswordField("Password");
-        pf.setFont(font1);
-        pf.setBounds(200, 330, 300, 50);
-        pf.setEchoChar((char) 0); // Visible for placeholder; will fix this later
-        frame.add(pf);
+	JPasswordField pf = new JPasswordField();
+	f.add(pf);		
+	pf.setEchoChar('*');
+	pf.setFont(font1);		//Changing the Font of TextField
+	pf.setBounds(200, 280, 300, 50);
 
-        // Sign In Button
-        JButton submit = new JButton("Sign In");
-        submit.setFont(font1);
-        submit.setBounds(200, 410, 300, 50);
-        frame.add(submit);
+	JButton submit = new JButton("Sign In");
+	f.add(submit);
+	submit.setFont(font1);
+	submit.setBounds(240, 360, 220, 50);
 
-        // Reset Button
-        JButton reset = new JButton("Reset");
-        reset.setFont(font1);
-        reset.setBounds(200, 480, 300, 50);
-        frame.add(reset);
+	//	Registering the ActionListener
 
-        frame.setVisible(true);
+	submit.addActionListener( //ActionListener Object
+		(x) -> {
+				JOptionPane.showInputDialog(f, "Navigating to Home Page");
+			   }
+						);
+
+	JButton reset = new JButton("Reset");
+	f.add(reset);
+	reset.setFont(font1);
+	reset.setBounds(240, 440, 220, 50);
+	reset.addActionListener(
+		(ac) -> { tf.setText(null); 	pf.setText(null); }
+		);
+
+
+	JLabel logo = new JLabel(new ImageIcon("logo.jpg"));
+	f.add(logo);
+	logo.setBounds(300, 50, 100, 100);
+
+
+	JLabel back = new JLabel(new ImageIcon("conclave.jpg"));
+//	f.add(back);
+//	back.setBounds(0, 0, 700, 800);
+
+	f.setVisible(true);
     }
 }
