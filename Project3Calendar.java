@@ -3,12 +3,12 @@ import java.text.DateFormatSymbols;
 import java.time.*;
 import javax.swing.*;
 
-public class MyCalendar extends JFrame {
+public class Project3Calendar extends JFrame {
     JComboBox<String> monthCombo;
     JComboBox<Integer> yearCombo;
     JPanel calendarPanel;
 
-    public MyCalendar() {
+    public Project3Calendar() {
         setTitle("My Calendar");
         setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -104,6 +104,6 @@ public class MyCalendar extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(MyCalendar::new);
+        SwingUtilities.invokeLater(Project3Calendar::new);
     }
 }

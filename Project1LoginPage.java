@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class LoginPage
+public class Project1LoginPage
 {
     static public void main(String[] arg)
     {
